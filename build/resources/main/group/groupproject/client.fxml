@@ -1,0 +1,14 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox fx:controller="group.groupproject.ClientController"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="15">
+    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+    <HBox spacing="10">
+        <Label text="Number:"/>
+        <TextField fx:id="numberEntry"/>
+    </HBox>
+    <Button text="Choose" onAction="#chooseNumber"/>
+    <Button text="Quit" onAction="#quitGame"/>
+</VBox>
