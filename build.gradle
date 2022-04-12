@@ -12,19 +12,20 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.7.1'
+    junitVersion = '5.8.2'
 }
 
-sourceCompatibility = '16'
-targetCompatibility = '16'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
 application {
-    mainModule = 'group.groupproject'
-    mainClass = 'group.groupproject.HelloApplication'
+    mainModule = 'group.serverside'
+    mainClass = 'group.serverside.ProjectServer'
+
 }
 
 javafx {
@@ -41,3 +42,17 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+sourceSets {
+    main.java.srcDir 'src/main/java'
+
+}
+
+task runClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main 'group.clientside.ProjectClient'
+
+}
+
+
+
