@@ -9,7 +9,7 @@ This file contains information about:
 - references to other materials/libraries used on our solution,
 - and a URL directing you to a video demo of the application.
 
-## Project Information
+## What's going on in the project?
 This project demonstrates a chatting application with one or more clients chatting in a server. 
 
 ![Chat Test!](https://media2.giphy.com/media/r4mlAanktpXQERS4xq/giphy.gif?cid=790b7611c111f781409980e5e9b18dd32246040bf92f590b&rid=giphy.gif&ct=g)
