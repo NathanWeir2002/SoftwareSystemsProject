@@ -17,10 +17,10 @@ public class ServerMainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        threadList = new ArrayList<>();
+        threadList = new ArrayList<>();     // begin new thread list after iteration
         stage.setTitle("Server");
 
-        Server server = new Server(5555);
+        Server server = new Server(5555);   // constant port number in this program
         Thread serverThread = (new Thread(server));
         serverThread.setDaemon(true);
         serverThread.start();

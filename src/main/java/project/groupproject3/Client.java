@@ -17,7 +17,7 @@ public class Client implements Runnable {
     public ObservableList<String> messages;
 
     public Client(String name) throws IOException {
-        Socket clientSocket = new Socket("127.0.0.1", 5555);
+        Socket clientSocket = new Socket("127.0.0.1", 5555);    // constant host address and port number in program
         reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         writer = new PrintWriter(clientSocket.getOutputStream(), true);
         messages = FXCollections.observableArrayList();
@@ -26,12 +26,16 @@ public class Client implements Runnable {
     }
 
     public void writeMessageToServer(String message) {
-        writer.println(name + ": " + message);
+        writer.println(name + ": " + message);  // how messages from clients will appear on messages box
     }
 
     public void run() {
         while (true) {
             try {
+                /*
+                allow messages from each client to appear collectively for each client on messages box via connection
+                between server and each client
+                 */
                 final String messageFromServer = reader.readLine();
                 Platform.runLater(new Runnable() {
                     public void run() {
@@ -40,11 +44,13 @@ public class Client implements Runnable {
                 });
             } catch (SocketException e) {
                 Platform.runLater(new Runnable() {
+                    // message to appear when server has been closed but clients are still active
                     public void run() {
-                        messages.add("Encountered problem with the server.\n Please close all current client\n " +
+                        messages.add("Encountered problem with the server.\nPlease close all current client\n" +
                                 "messengers and then restart the server.");
                     }
                 });
+                // ensure messages can no longer be sent by any client because of the server being closed
                 break;
             } catch (IOException e) {
                 e.printStackTrace();

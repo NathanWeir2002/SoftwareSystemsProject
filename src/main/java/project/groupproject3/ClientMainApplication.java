@@ -40,7 +40,7 @@ public class ClientMainApplication extends Application {
                     clientThread.start();
                     threadList.add(clientThread);
 
-                    stage.close();
+                    stage.close();  // start new stage afterwards with new scene
                     
                     stage.setTitle(usernameField.getText() + " - Messenger");
                     stage.setScene(messagingUIContent(client));
@@ -58,7 +58,7 @@ public class ClientMainApplication extends Application {
         rootPane.setAlignment(Pos.CENTER);
         rootPane.add(usernameLabel, 0, 0);
         rootPane.add(usernameField, 1, 0);
-        rootPane.add(submitButton, 0, 3, 2, 1);
+        rootPane.add(submitButton, 0, 3);
 
         Scene scene = new Scene(rootPane, 300, 200);
         stage.setScene(scene);
@@ -67,7 +67,7 @@ public class ClientMainApplication extends Application {
 
     @Override
     public void stop() throws Exception {
-        super.stop();
+        super.stop();   // stop() function from Application abstract class
         for (Thread thread: threadList){
             thread.interrupt();
         }
@@ -81,6 +81,7 @@ public class ClientMainApplication extends Application {
         messageField.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                // enter message into messages box when client hits enter on keyboard
                 client.writeMessageToServer(messageField.getText());
                 messageField.clear();
             }
