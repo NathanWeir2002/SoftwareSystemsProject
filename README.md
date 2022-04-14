@@ -23,7 +23,7 @@ After the server is shut down, a graph displaying the chatting activity of all o
 
 **For a video presentation of how to run the program, see youtube link [here!](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
 
-[![Youtube Logo](https://i.pinimg.com/736x/3f/d2/31/3fd231fb3eee5535d0843be57b56847e.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![Youtube Logo](https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png)
 
 
 Using IntelliJ, right click ClientMainApplication and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances.
