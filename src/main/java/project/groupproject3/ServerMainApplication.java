@@ -32,7 +32,6 @@ public class ServerMainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         threadList = new ArrayList<>();     // begin new thread list after iteration
-        stage.setTitle("Server");
 
         Server server = new Server(5555);   // constant port number in this program
         Thread serverThread = (new Thread(server));
@@ -53,6 +52,7 @@ public class ServerMainApplication extends Application {
         rootPane.add(clientLabel, 0, 0);
         rootPane.add(clientView, 0, 1);
 
+        stage.setTitle("Server");
         Scene scene = new Scene(rootPane, 300, 300);
         stage.setScene(scene);
         stage.show();
