@@ -19,7 +19,7 @@ public class Server implements Runnable {
     private final ArrayList<ClientThread> clientThreads;    // list containing threads that clients are on
     private final ServerSocket serverSocket;
 
-    private File file = new File("./src/main/resources/Logs.csv");
+    private File file = new File("Logs.csv");
     private LocalTime time;
     private LocalDate date;
     private DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss"); //for the graph

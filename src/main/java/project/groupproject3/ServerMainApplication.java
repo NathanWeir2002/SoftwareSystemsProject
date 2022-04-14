@@ -83,7 +83,7 @@ public class ServerMainApplication extends Application {
 
         try {
 
-            File file = new File("./src/main/resources/Logs.csv");
+            File file = new File("Logs.csv");
             if (!file.exists()){
                 file.createNewFile();
             }
