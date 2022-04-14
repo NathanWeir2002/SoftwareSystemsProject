@@ -10,32 +10,45 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Class that sets up the client side of the application.
+ */
 public class Client implements Runnable {
-    private final BufferedReader reader;  // server to client
-    private final PrintWriter writer;     // client to server
-    private final String name;
+    private final BufferedReader reader;
+    private final PrintWriter writer;
+    private final String username;
     public ObservableList<String> messages;
 
-    public Client(String name) throws IOException {
+    /**
+     * Constructor for this class.
+     * @param username Client's username.
+     * @throws IOException Handles any errors that occur in the process of getting either the input stream or the output
+     * stream for the client socket.
+     */
+    public Client(String username) throws IOException {
         Socket clientSocket = new Socket("127.0.0.1", 5555);    // constant host address and port number in program
         reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         writer = new PrintWriter(clientSocket.getOutputStream(), true);
         messages = FXCollections.observableArrayList();
-        this.name = name;
-        writer.println(name);
+        this.username = username;
+        writer.println(username);
     }
 
+    /**
+     * Method that handles writing messages to server.
+     * @param message The client's message.
+     */
     public void writeMessageToServer(String message) {
-        writer.println(name + ": " + message);  // how messages from clients will appear on messages box
+        writer.println(username + ": " + message);  // how messages from clients will appear on messages box
     }
 
+    /**
+     * Method that allows messages from each client to appear collectively for each client on messages box via
+     * connection between server and each client.
+     */
     public void run() {
         while (true) {
             try {
-                /*
-                allow messages from each client to appear collectively for each client on messages box via connection
-                between server and each client
-                 */
                 final String messageFromServer = reader.readLine();
                 Platform.runLater(new Runnable() {
                     public void run() {

@@ -8,6 +8,9 @@ import java.net.Socket;
 import java.net.SocketException;
 import javafx.application.Platform;
 
+/**
+ * Class that sets up capability of multiple clients being present in the server.
+ */
 public class ClientThread implements Runnable {
 
     private final Socket clientSocket;
@@ -16,6 +19,11 @@ public class ClientThread implements Runnable {
     private PrintWriter outMessageWriter;
     private String clientName;
 
+    /**
+     * Constructor for this class.
+     * @param clientSocket The client socket.
+     * @param mainServer The current server.
+     */
     public ClientThread(Socket clientSocket, Server mainServer) {
         this.clientSocket = clientSocket;
         this.mainServer = mainServer;
@@ -27,6 +35,10 @@ public class ClientThread implements Runnable {
         }
     }
 
+    /**
+     * Method that gathers the client's username and socket information which the server keeps track of. The client's
+     * message that they want to send is also handled here.
+     */
     public void run() {
         try {
             this.clientName = inMessageReader.readLine();
@@ -53,7 +65,11 @@ public class ClientThread implements Runnable {
         }
     }
 
-    public void writeToServer(String input) {
-        outMessageWriter.println(input);
+    /**
+     * Method that handles sending messages that have been stored in sockets to the server.
+     * @param message The message to be sent to the server.
+     */
+    public void writeToServer(String message) {
+        outMessageWriter.println(message);
     }
 }

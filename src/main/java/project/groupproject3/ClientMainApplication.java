@@ -15,9 +15,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+/**
+ * The client application that will ask clients for their username and then allow them to start messaging.
+ */
 public class ClientMainApplication extends Application {
     private ArrayList<Thread> threadList;
 
+    /**
+     * Abstract method from abstract Application class that helps set up JavaFX application.
+     * @param stage The main stage.
+     */
     @Override
     public void start(Stage stage) {
         threadList = new ArrayList<>();
@@ -30,6 +37,11 @@ public class ClientMainApplication extends Application {
         Button submitButton = new Button();
         submitButton.setText("Submit");
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            /**
+             * Method that controls what happens once the client has entered their username and clicked the 'Submit'
+             * button.
+             * @param Event Event of client clicking the button.
+             */
             @Override
             public void handle(ActionEvent Event) {
                 Client client;
@@ -65,6 +77,10 @@ public class ClientMainApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Method that controls what happens when a client exits the server.
+     * @throws Exception Handles any errors that occur in the process of interrupting the appropriate thread.
+     */
     @Override
     public void stop() throws Exception {
         super.stop();   // stop() function from Application abstract class
@@ -73,12 +89,21 @@ public class ClientMainApplication extends Application {
         }
     }
 
+    /**
+     * This method builds the contents of the messaging system for each client.
+     * @param client The current client.
+     * @return The completed messaging system scene.
+     */
     public Scene messagingUIContent(Client client) {
         ListView<String> messagingLogList = new ListView<>();
         messagingLogList.setItems(client.messages);
 
         TextField messageField = new TextField();
         messageField.setOnAction(new EventHandler<ActionEvent>() {
+            /**
+             * Method that controls what happens when the client hits enter on their keyboard to send the message.
+             * @param event Event of client hitting enter on their keyboard.
+             */
             @Override
             public void handle(ActionEvent event) {
                 // enter message into messages box when client hits enter on keyboard
@@ -97,6 +122,10 @@ public class ClientMainApplication extends Application {
         return new Scene(rootPane, 300, 300);
     }
 
+    /**
+     * Main method that helps launch the JavaFX application (the client side).
+     * @param args Any command-line arguments.
+     */
     public static void main(String[] args){
         launch();
     }
