@@ -23,7 +23,7 @@ After the server is shut down, a graph displaying the chatting activity of all o
 
 **For a video presentation of how to run the program, see youtube link [here!](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
 
-<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Youtube Logo" width="200"/>
+[<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Youtube Logo" width="200"/>](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 Using IntelliJ, right click ClientMainApplication and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances.
 Simply run the main methods present in the `ServerMainApplication` and `ClientMainApplication` classes (the order you run them in doesn't matter but the server must be running in order for the client to begin chatting). If you want to add another client to the server, run the main method in the `ClientMainApplication` and keep doing so until satisfied. Right when the server and all of the `ClientMainApplication` class instances have been shut down, the client activity graph will be produced. Once the window displaying the graph has been shut down, the application is considered complete and you can then repeat the process of running the application.
