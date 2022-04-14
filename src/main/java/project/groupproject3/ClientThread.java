@@ -13,7 +13,6 @@ import javafx.application.Platform;
  */
 public class ClientThread implements Runnable {
 
-    private final Socket clientSocket;
     private final Server mainServer;
     private BufferedReader inMessageReader;
     private PrintWriter outMessageWriter;
@@ -25,7 +24,6 @@ public class ClientThread implements Runnable {
      * @param mainServer The current server.
      */
     public ClientThread(Socket clientSocket, Server mainServer) {
-        this.clientSocket = clientSocket;
         this.mainServer = mainServer;
         try {
             inMessageReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -47,7 +45,7 @@ public class ClientThread implements Runnable {
                 @Override
                 public void run() {
                     // add client name and client socket address to server 
-                    mainServer.clientNamesList.add(clientName + ": " + clientSocket.getRemoteSocketAddress());
+                    mainServer.clientNamesList.add(clientName + " has joined the server.");
                 }
             });
             while (true) {
@@ -55,11 +53,13 @@ public class ClientThread implements Runnable {
                 mainServer.outputToSockets(messageToServer);
             }
         } catch (SocketException e) {
-            /*
-            if a client leaves the server and the server's still running afterwards, the server will display the below
-            message when another client sends a message.
-             */
-            mainServer.clientNamesList.add(clientName + " has left server.");
+            // if a client leaves the server but the server is still running, the server will display the below message.
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    mainServer.clientNamesList.add(clientName + " has left the server.");
+                }
+            });
         } catch (IOException e) {
             e.printStackTrace();
         }

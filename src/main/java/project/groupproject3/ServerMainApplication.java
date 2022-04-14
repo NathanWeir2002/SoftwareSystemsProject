@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
 /**
- * This is a client-server chatting program that supports multiple clients that includes a graph displaying
+ * This is a client-server chatting program that supports multiple clients and also includes a graph displaying
  * clients' messaging activity over a period of time.
  * @author Ashar Izhar, Tin Trung Bien, Nathan Weir
  */
