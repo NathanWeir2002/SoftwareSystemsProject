@@ -12,7 +12,7 @@ This file contains information about:
 ## What's going on in the project?
 This project demonstrates a chatting application with one or more clients chatting in a server. 
 
-![Chat Test!](https://media2.giphy.com/media/r4mlAanktpXQERS4xq/giphy.gif?cid=790b7611c111f781409980e5e9b18dd32246040bf92f590b&rid=giphy.gif&ct=g)
+![Chat Test!](https://media2.giphy.com/media/PK6K4HuWi7HNHXF3Ht/giphy.gif?cid=790b76114ff2618cc7e9eac4521ef89bd918c6f4095b1289&rid=giphy.gif&ct=g)
 
 After the server is shut down, a graph displaying the chatting activity of all of the clients over the course of the running time of the server is presented. A CSV file is used as a means of storing the values that will then be displayed on the graph. 
 
