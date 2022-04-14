@@ -1,3 +1,5 @@
+![](https://imgur.com/a/TCqGIse)
+
 # Software Systems Group Project
 > This file contains information about the project and it's functionality, how to run the application, references to other materials/libraries used on our solution, and a URL directing you to a video demo of the application. 
 ## Project Information
