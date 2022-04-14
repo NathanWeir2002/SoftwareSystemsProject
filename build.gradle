@@ -15,8 +15,8 @@ ext {
     junitVersion = '5.7.1'
 }
 
-sourceCompatibility = '16'
-targetCompatibility = '16'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -24,11 +24,17 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'project.groupproject3'
-    mainClass = 'project.groupproject3.HelloApplication'
+    mainClass = 'project.groupproject3.ServerMainApplication'
 }
 
+sourceSets {
+    main.java.srcDir 'src/main/java'
+
+}
+
+
 javafx {
-    version = '16'
+    version = '11.0.2'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
@@ -40,4 +46,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+task runClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main 'project.groupproject3.ClientMainApplication'
+
 }

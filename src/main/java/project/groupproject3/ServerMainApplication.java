@@ -4,13 +4,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
 
 /**
  * This is a client-server chatting program that supports multiple clients that includes a graph displaying
@@ -44,6 +48,24 @@ public class ServerMainApplication extends Application {
         ListView<String> clientView = new ListView<>();
         ObservableList<String> clientList = server.clientNamesList;
         clientView.setItems(clientList);
+
+        //button that opens an activity graph
+        Button activityGraphBtn = new Button("Check Activity Graph");
+        activityGraphBtn.setTranslateX(10);
+        activityGraphBtn.setTranslateY(10);
+
+        activityGraphBtn.setOnAction(e -> {
+
+//            try {
+//                ActivityGraph activityGraph = new ActivityGraph();
+//                Stage actGraphStage = new Stage();
+//                actGraphStage.setTitle("Activity Graph");
+//                actGraphStage.getScene().setRoot(activityGraph.getRoot());
+//                actGraphStage.show();
+//            } catch (Exception err){
+//
+//            }
+        });
 
         GridPane rootPane = new GridPane();
         rootPane.setPadding(new Insets(20));

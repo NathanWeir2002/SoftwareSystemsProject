@@ -1,6 +1,8 @@
 package project.groupproject3;
 
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -14,13 +16,16 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The client application that will ask clients for their username and then allow them to start messaging.
  */
 public class ClientMainApplication extends Application {
     private ArrayList<Thread> threadList;
-
+    private LocalTime time;
+    public DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("HH:mm");
     /**
      * Abstract method from abstract Application class that helps set up JavaFX application.
      * @param stage The main stage.
@@ -107,7 +112,7 @@ public class ClientMainApplication extends Application {
             @Override
             public void handle(ActionEvent event) {
                 // enter message into messages box when client hits enter on keyboard
-                client.writeMessageToServer(messageField.getText());
+                client.writeMessageToServer("(" + time.now().format(formatTime) + ") " + messageField.getText());
                 messageField.clear();
             }
         });
