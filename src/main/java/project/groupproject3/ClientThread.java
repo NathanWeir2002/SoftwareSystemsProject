@@ -22,8 +22,10 @@ public class ClientThread implements Runnable {
      * Constructor for this class.
      * @param clientSocket The client socket.
      * @param mainServer The current server.
+     * @throws SocketException Handles any errors that occur in the process of creating or accessing a socket.
      */
-    public ClientThread(Socket clientSocket, Server mainServer) {
+    public ClientThread(Socket clientSocket, Server mainServer) throws SocketException {
+        clientSocket.setTcpNoDelay(true);   // allow for faster updates to server when a client is added
         this.mainServer = mainServer;
         try {
             inMessageReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -44,13 +46,13 @@ public class ClientThread implements Runnable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    // add client name and client socket address to server 
+                    // add client name and client socket address to server
                     mainServer.clientNamesList.add(clientName + " has joined the server.");
                 }
             });
             while (true) {
                 String messageToServer = inMessageReader.readLine();
-                mainServer.outputToSockets(messageToServer);
+                mainServer.outputMessageToSockets(messageToServer);
             }
         } catch (SocketException e) {
             // if a client leaves the server but the server is still running, the server will display the below message.

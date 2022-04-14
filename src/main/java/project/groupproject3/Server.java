@@ -51,7 +51,7 @@ public class Server implements Runnable {
      * that data. That information is then sent to the server.
      * @param message The message that the client wants to send.
      */
-    public void outputToSockets(String message) {
+    public void outputMessageToSockets(String message) {
         for (ClientThread clientThread : clientThreads) {
             // write messages to server so that messages box can be updated for all clients
             clientThread.writeToServer(message);
