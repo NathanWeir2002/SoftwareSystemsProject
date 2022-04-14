@@ -99,9 +99,7 @@ public class ServerMainApplication extends Application {
             while ((lineTemp = bufferedReader.readLine()) != null) {
                 if (!(lineTemp.equals("date,time,message"))){
                     temp = lineTemp.split(",", 2);
-                    System.out.println(temp[0]);
-                    System.out.println(date.format(dateFormat));
-                    System.out.println(date.format(dateFormat).equals(temp[0]));
+
                     if (date.format(dateFormat).equals(temp[0])) {
                         //temp = Arrays.copyOf(temp, temp.length-1);
                         temp = temp[1].split(":");
@@ -121,7 +119,7 @@ public class ServerMainApplication extends Application {
             if (data != null){
                 for (int a = 0; a < data.size(); a++) {
                     int index = Integer.parseInt(data.get(a));
-                    System.out.println(index);
+
                     activity.set(index, activity.get(index) + 1);
                 }
             }
