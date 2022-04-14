@@ -28,7 +28,7 @@ public class ClientMainApplication extends Application {
     @Override
     public void start(Stage stage) {
         threadList = new ArrayList<>();
-        stage.setTitle("Choose Your Username!");
+        stage.setTitle("Choose Your Username");
 
         TextField usernameField = new TextField();
 
@@ -36,10 +36,11 @@ public class ClientMainApplication extends Application {
         usernameLabel.setText("Name:");
         Button submitButton = new Button();
         submitButton.setText("Submit");
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+        submitButton.setOnAction(new EventHandler<>() {
             /**
              * Method that controls what happens once the client has entered their username and clicked the 'Submit'
              * button.
+             *
              * @param Event Event of client clicking the button.
              */
             @Override
@@ -53,12 +54,11 @@ public class ClientMainApplication extends Application {
                     threadList.add(clientThread);
 
                     stage.close();  // start new stage afterwards with new scene
-                    
+
                     stage.setTitle(usernameField.getText() + " - Messenger");
                     stage.setScene(messagingUIContent(client));
                     stage.show();
-                }
-                catch(IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -99,9 +99,11 @@ public class ClientMainApplication extends Application {
         messagingLogList.setItems(client.messages);
 
         TextField messageField = new TextField();
-        messageField.setOnAction(new EventHandler<ActionEvent>() {
+        messageField.setPromptText("Enter message here...");
+        messageField.setOnAction(new EventHandler<>() {
             /**
              * Method that controls what happens when the client hits enter on their keyboard to send the message.
+             *
              * @param event Event of client hitting enter on their keyboard.
              */
             @Override
