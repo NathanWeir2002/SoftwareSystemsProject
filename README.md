@@ -1,4 +1,4 @@
-**Contributors:** Nathan Weir, Tin Trung Bien, and Ashar Izhar.
+'**Contributors:** Nathan Weir, Tin Trung Bien, and Ashar Izhar.'
 
 ![](https://i.imgur.com/kUgcKAp.png)
 
