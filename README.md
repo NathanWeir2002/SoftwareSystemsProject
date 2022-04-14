@@ -3,7 +3,11 @@
 ![Default Chat Between Foo and Bar.](https://i.imgur.com/kUgcKAp.png)
 
 # Software Systems Group Project
-> This file contains information about the project and it's functionality, how to run the application, references to other materials/libraries used on our solution, and a URL directing you to a video demo of the application.
+This file contains information about:
+- the project and it's functionality,
+- how to run the application,
+- references to other materials/libraries used on our solution,
+- and a URL directing you to a video demo of the application.
 
 ## Project Information
 This project demonstrates a chatting application with one or more clients chatting in a server. After the server is shut down, a graph displaying the chatting activity of all of the clients over the course of the running time of the server is presented. A CSV file is used as a means of storing the values that will then be displayed on the graph. 
