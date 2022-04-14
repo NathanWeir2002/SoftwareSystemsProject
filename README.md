@@ -1,4 +1,4 @@
-'Contributors: Nathan Weir, Tin Trung Bien, and Ashar Izhar.'
+`Contributors: Nathan Weir, Tin Trung Bien, and Ashar Izhar.`
 
 ![Default Chat Between Foo and Bar.](https://i.imgur.com/kUgcKAp.png)
 
