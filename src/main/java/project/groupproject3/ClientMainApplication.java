@@ -84,18 +84,6 @@ public class ClientMainApplication extends Application {
     }
 
     /**
-     * Method that controls what happens when a client exits the server.
-     * @throws Exception Handles any errors that occur in the process of interrupting the appropriate thread.
-     */
-    @Override
-    public void stop() throws Exception {
-        super.stop();   // stop() function from Application abstract class
-        for (Thread thread: threadList){
-            thread.interrupt();
-        }
-    }
-
-    /**
      * This method builds the contents of the messaging system for each client.
      * @param client The current client.
      * @return The completed messaging system scene.
@@ -127,6 +115,18 @@ public class ClientMainApplication extends Application {
         rootPane.add(messageField, 0, 1);
 
         return new Scene(rootPane, 300, 300);
+    }
+
+    /**
+     * Method that controls what happens when a client exits the server.
+     * @throws Exception Handles any errors that occur in the process of interrupting the appropriate thread.
+     */
+    @Override
+    public void stop() throws Exception {
+        super.stop();   // stop() function from Application abstract class
+        for (Thread thread: threadList){
+            thread.interrupt();
+        }
     }
 
     /**
