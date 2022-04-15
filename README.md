@@ -25,6 +25,7 @@ After the server is shut down, a graph displaying the chatting activity of all o
 
 [<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Youtube Logo" width="200"/>](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
+To begin,
 - Using IntelliJ, right click `ClientMainApplication` and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances".
 - Then, simply run the main methods present in the `ServerMainApplication` and `ClientMainApplication` classes (the order you run them in doesn't matter but the server must be running in order for the client to begin chatting).
 -  If you want to add another client to the server, run the main method in the `ClientMainApplication` and keep doing so until satisfied. 
