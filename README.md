@@ -16,7 +16,7 @@ This project demonstrates a chatting application with one or more clients chatti
 
 After the server is shut down, a graph is shown that displays the amount of messages sent per hour in a day. 
 
-<img src="https://i.imgur.com/KSipvbZ.png" alt="Graph"/>
+<img src="https://i.imgur.com/Z4WMSnE.png" alt="Graph"/>
 
 A CSV file is used as a means of storing the values that will then be displayed on the graph. 
 
