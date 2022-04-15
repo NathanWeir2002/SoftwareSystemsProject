@@ -40,8 +40,7 @@ After the server is shut down, a graph displaying chatting activity over the cou
 - Once the server is closed, a graph displaying the user activity in intervals of one hour each will be displayed.
 - Close the graph to complete the program. If the graph is closed before the clients are disconnected, the clients will be notified that their connection has been lost.
 
-**Alternatively, use an executable Jar file found [here.]
-(https://drive.google.com/drive/folders/1qcNNLoXyQnWAwGEZZL4OOepyXH4zNhBS?usp=sharing)**
+**Alternatively, use an executable Jar file found [here.](https://drive.google.com/drive/folders/1qcNNLoXyQnWAwGEZZL4OOepyXH4zNhBS?usp=sharing)**
 
 - First, initialize the server by either running the ServerExecute.bat, or run `java -jar ServerExecute.jar` in the command line.
 - Then, initialize a client by either running the ClientExecute.bat, or run `java -jar ClientExecute.jar` in the command line.
