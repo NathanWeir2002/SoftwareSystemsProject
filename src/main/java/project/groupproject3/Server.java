@@ -62,7 +62,7 @@ public class Server implements Runnable {
      * that data. That information is then sent to the server.
      * @param message The message that the client wants to send.
      */
-    public void outputToSockets(String message) throws IOException {
+    public void outputMessageToSockets(String message) throws IOException {
         //check if file is empty. If empty or nonexistent, returns 0;
         long fileLength = file.length(); //can only check when file isn't opened else returns 0
 

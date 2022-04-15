@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.time.LocalTime;
@@ -33,7 +34,6 @@ public class ClientMainApplication extends Application {
     @Override
     public void start(Stage stage) {
         threadList = new ArrayList<>();
-        stage.setTitle("Choose Your Username");
 
         TextField usernameField = new TextField();
 
@@ -75,8 +75,9 @@ public class ClientMainApplication extends Application {
         rootPane.setAlignment(Pos.CENTER);
         rootPane.add(usernameLabel, 0, 0);
         rootPane.add(usernameField, 1, 0);
-        rootPane.add(submitButton, 0, 3);
+        rootPane.add(submitButton, 0, 2);
 
+        stage.setTitle("Choose Your Username");
         Scene scene = new Scene(rootPane, 300, 200);
         stage.setScene(scene);
         stage.show();
@@ -108,7 +109,6 @@ public class ClientMainApplication extends Application {
         messageField.setOnAction(new EventHandler<>() {
             /**
              * Method that controls what happens when the client hits enter on their keyboard to send the message.
-             *
              * @param event Event of client hitting enter on their keyboard.
              */
             @Override
