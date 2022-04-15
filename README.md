@@ -27,6 +27,9 @@ After the server is shut down, a graph displaying the chatting activity of all o
 
 **To begin, through Windows, the program may be run in IntelliJ:**
 - Right click `ClientMainApplication` and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances".
+
+<img src="https://i.imgur.com/GH7DwIw.png" alt="Highlighted files" width="400"/>
+
 - Then, run the `ServerMainApplication` method. This will initialize the server.
 - Next, run the `ClientMainApplication` method. This will initialize one single client.
 
