@@ -113,7 +113,5 @@ public class Server implements Runnable {
             e.printStackTrace();
             fWriter.close(); //closing just in case
         }
-
-
     }
 }
