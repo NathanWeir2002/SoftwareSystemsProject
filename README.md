@@ -15,9 +15,10 @@ This project demonstrates a chatting application with one or more clients chatti
 ![Chat Test!](https://media2.giphy.com/media/PK6K4HuWi7HNHXF3Ht/giphy.gif?cid=790b76114ff2618cc7e9eac4521ef89bd918c6f4095b1289&rid=giphy.gif&ct=g)
 
 After the server is shut down, a graph is shown that displays the amount of messages sent per hour in a day. 
-- A CSV file is used as a means of storing the values that will then be displayed on the graph. 
 
 <img src="https://i.imgur.com/KSipvbZ.png" alt="Graph"/>
+
+A CSV file is used as a means of storing the values that will then be displayed on the graph. 
 
 ## How to Run the Application:
 
