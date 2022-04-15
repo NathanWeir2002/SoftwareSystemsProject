@@ -54,16 +54,16 @@ public class ServerMainApplication extends Application {
         ObservableList<String> clientList = server.clientNamesList;
         clientView.setItems(clientList);
 
-        GridPane rootPane = new GridPane();
-        rootPane.setPadding(new Insets(20));
-        rootPane.setVgap(10);
-        rootPane.setHgap(10);
-        rootPane.setAlignment(Pos.CENTER);
-        rootPane.add(clientLabel, 0, 0);
-        rootPane.add(clientView, 0, 1);
+        GridPane gridpane = new GridPane();
+        gridpane.setPadding(new Insets(15));
+        gridpane.setVgap(20);
+        gridpane.setHgap(10);
+        gridpane.add(clientLabel, 0, 0);
+        gridpane.add(clientView, 0, 1);
+        gridpane.setAlignment(Pos.CENTER);
 
         stage.setTitle("Server");
-        Scene scene = new Scene(rootPane, 300, 300);
+        Scene scene = new Scene(gridpane, 300, 300);
         stage.setOnHidden(e -> shutdown()); //activates on normal shutdown
         stage.setScene(scene);
         stage.show();

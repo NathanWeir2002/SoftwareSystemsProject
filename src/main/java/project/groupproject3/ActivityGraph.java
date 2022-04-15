@@ -22,7 +22,7 @@ import java.time.LocalDate;
  */
 public class ActivityGraph {
 
-    private GridPane root;
+    private final GridPane root;
     private LocalDate date = LocalDate.now();
     private DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
 
@@ -39,7 +39,6 @@ public class ActivityGraph {
         numberAxis.setLabel("Messages");
 
         try{
-
             File file = new File("./src/main/resources/Logs.csv");
             ArrayList<String> data = null;
             String[] temp;
@@ -82,21 +81,13 @@ public class ActivityGraph {
             Scene scene = new Scene(barChart, 800, 800);
             barChart.getData().add(series);
 
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public GridPane getRoot(){
         return root;
     }
-
-
-
 
 }

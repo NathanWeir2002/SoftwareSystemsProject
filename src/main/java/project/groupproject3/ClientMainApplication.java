@@ -69,16 +69,15 @@ public class ClientMainApplication extends Application {
             }
         });
 
-        GridPane rootPane = new GridPane();
-        rootPane.setVgap(10);
-        rootPane.setHgap(10);
-        rootPane.setAlignment(Pos.CENTER);
-        rootPane.add(usernameLabel, 0, 0);
-        rootPane.add(usernameField, 1, 0);
-        rootPane.add(submitButton, 0, 2);
+        GridPane gridpane = new GridPane();
+        gridpane.setVgap(15);
+        gridpane.add(usernameLabel, 0, 0);
+        gridpane.add(usernameField, 1, 0);
+        gridpane.add(submitButton, 0, 2);
+        gridpane.setAlignment(Pos.CENTER);
 
         stage.setTitle("Choose Your Username");
-        Scene scene = new Scene(rootPane, 300, 200);
+        Scene scene = new Scene(gridpane, 300, 200);
         stage.setScene(scene);
         stage.show();
     }
@@ -106,15 +105,15 @@ public class ClientMainApplication extends Application {
                 messageField.clear();
             }
         });
-        GridPane rootPane = new GridPane();
-        rootPane.setPadding(new Insets(20));
-        rootPane.setAlignment(Pos.CENTER);
-        rootPane.setHgap(10);
-        rootPane.setVgap(10);
-        rootPane.add(messagingLogList, 0, 0);
-        rootPane.add(messageField, 0, 1);
+        GridPane gridpane = new GridPane();
+        gridpane.setPadding(new Insets(15));
+        gridpane.setHgap(10);
+        gridpane.setVgap(15);
+        gridpane.add(messagingLogList, 0, 0);
+        gridpane.add(messageField, 0, 1);
+        gridpane.setAlignment(Pos.CENTER);
 
-        return new Scene(rootPane, 300, 300);
+        return new Scene(gridpane, 300, 300);
     }
 
     /**

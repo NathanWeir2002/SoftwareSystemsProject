@@ -106,7 +106,6 @@ public class Server implements Runnable {
             String logMSG = "\n" +date.now().format(dateFormatter) + ","
                     + time.now().format(timeFormatter) + ","
                     + message;
-            System.out.println(logMSG);
             fWriter.write(logMSG);
 
         } catch (IOException e){
