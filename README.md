@@ -33,7 +33,7 @@ After the server is shut down, a graph displaying the chatting activity of all o
 - Then, run the `ServerMainApplication` method. This will initialize the server.
 - Next, run the `ClientMainApplication` method. This will initialize one single client.
 
-<img src="https://i.imgur.com/xqI77aq.png" alt="Highlighted files" width="400"/>
+<img src="https://i.imgur.com/xqI77aq.png" alt="Highlighted files"/>
 
 - To disconnect a client from the server, close the client of choice's window. This will prompt a message in the server mentioning that the client has been disconnected.
 - To close the server, close the server's window. 
@@ -46,7 +46,7 @@ After the server is shut down, a graph displaying the chatting activity of all o
 - Then, initialize a client by either running the ClientExecute.bat, or run `java -jar ClientExecute.jar` in the command line.
 - Both .bat files simply include the previous two commands, respectively.
 
-<img src="https://i.imgur.com/a2hRTz8.png" alt="Google Drive" width="400"/>
+<img src="https://i.imgur.com/a2hRTz8.png" alt="Google Drive"/>
 
 - To disconnect a client from the server, close the client of choice's window. This will prompt a message in the server mentioning that the client has been disconnected.
 - To close the server, close the server's window. 
