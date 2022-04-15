@@ -36,6 +36,14 @@ public class ClientThread implements Runnable {
     }
 
     /**
+     * Method that handles sending messages that have been stored in sockets to the server.
+     * @param message The message to be sent to the server.
+     */
+    public void writeMessageToServer(String message) {
+        outMessageWriter.println(message);
+    }
+
+    /**
      * Method that gathers the client's username and socket information which the server keeps track of. The client's
      * message that they want to send is also handled here.
      */
@@ -65,13 +73,5 @@ public class ClientThread implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * Method that handles sending messages that have been stored in sockets to the server.
-     * @param message The message to be sent to the server.
-     */
-    public void writeToServer(String message) {
-        outMessageWriter.println(message);
     }
 }

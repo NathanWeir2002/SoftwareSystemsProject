@@ -38,6 +38,42 @@ public class Server implements Runnable {
     }
 
     /**
+     * Method that handles the process of sending messages that a client has created to the sockets to keep track of
+     * that data. That information is then sent to the server.
+     * @param message The message that the client wants to send.
+     */
+    public void outputMessageToSockets(String message) throws IOException {
+        //check if file is empty. If empty or nonexistent, returns 0;
+        long fileLength = file.length(); //can only check when file isn't opened else returns 0
+
+        if (fileLength>0){
+            //writes to file by appending text to the end of the file
+            fileWriter = new FileWriter(file, true);
+            log(fileWriter, message, fileLength);
+        } else {
+            //writes the header first before writing actual message
+            //could use improvement
+            FileWriter fW = new FileWriter(file, false); //writes at the top
+            fileWriter = new FileWriter(file, true); //appends
+            String header = "date,time,message"; //can be increased for things like number of characters, etc.
+
+            fW.write(header);
+            fW.flush();
+
+            log(fileWriter, message, fileLength);
+            fW.close();
+
+        }
+        fileWriter.flush();
+        fileWriter.close();
+
+        for (ClientThread clientThread : clientThreads) {
+            // write messages to server so that messages box can be updated for all clients
+            clientThread.writeMessageToServer(message);
+        }
+    }
+
+    /**
      * Method that helps form connection between server and each client for messaging process to occur.
      */
     public void run() {
@@ -57,48 +93,6 @@ public class Server implements Runnable {
         }
     }
 
-    /**
-     * Method that handles the process of sending messages that a client has created to the sockets to keep track of
-     * that data. That information is then sent to the server.
-     * @param message The message that the client wants to send.
-     */
-    public void outputMessageToSockets(String message) throws IOException {
-        //check if file is empty. If empty or nonexistent, returns 0;
-        long fileLength = file.length(); //can only check when file isn't opened else returns 0
-
-
-        if (fileLength>0){
-            //writes to file by appending text to the end of the file
-            fileWriter = new FileWriter(file, true);
-            log(fileWriter, message, fileLength);
-            fileWriter.flush();
-        } else {
-            //writes the header first before writing actual message
-            //could use improvement
-            FileWriter fW = new FileWriter(file, false); //writes at the top
-            fileWriter = new FileWriter(file, true); //appends
-            String header = "date,time,message"; //can be increased for things like number of characters, etc.
-
-            fW.write(header);
-            fW.flush();
-
-            log(fileWriter, message, fileLength);
-            fW.close();
-            fileWriter.flush();
-
-        }
-
-        fileWriter.close();
-
-
-        for (ClientThread clientThread : clientThreads) {
-            // write messages to server so that messages box can be updated for all clients
-            clientThread.writeToServer(message);
-        }
-
-
-
-    }
     //logs messages in csv format
     public void log(FileWriter fWriter, String message, long length) throws IOException {
 
