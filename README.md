@@ -14,7 +14,7 @@ This project demonstrates a chatting application with one or more clients chatti
 
 ![Chat Test!](https://media2.giphy.com/media/PK6K4HuWi7HNHXF3Ht/giphy.gif?cid=790b76114ff2618cc7e9eac4521ef89bd918c6f4095b1289&rid=giphy.gif&ct=g)
 
-After the server is shut down, a graph displaying the chatting activity of all of the clients over the course of the running time of the server is presented. 
+After the server is shut down, a graph displaying chatting activity over the course of the running time of the server is presented. 
 - A CSV file is used as a means of storing the values that will then be displayed on the graph. 
 
 *INSERT GRAPH SCREENSHOT HERE*
@@ -47,8 +47,3 @@ After the server is shut down, a graph displaying the chatting activity of all o
 - Both .bat files simply include the previous two commands, respectively.
 
 <img src="https://i.imgur.com/a2hRTz8.png" alt="Google Drive"/>
-
-- To disconnect a client from the server, close the client of choice's window. This will prompt a message in the server mentioning that the client has been disconnected.
-- To close the server, close the server's window. 
-- Once the server is closed, a graph displaying the user activity in intervals of one hour each will be displayed.
-- Close the graph to complete the program. If the graph is closed before the clients are disconnected, the clients will be notified that their connection has been lost.
