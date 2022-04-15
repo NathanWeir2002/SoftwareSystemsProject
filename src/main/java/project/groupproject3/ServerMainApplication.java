@@ -69,7 +69,6 @@ public class ServerMainApplication extends Application {
         stage.show();
     }
 
-
     /**
      * Void method that creates a graph based on Logs.csv after server stage is closed.
      *
@@ -96,7 +95,6 @@ public class ServerMainApplication extends Application {
 
             ArrayList<String> data = new ArrayList<>();
 
-
             String[] temp;
             String lineTemp;
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -112,8 +110,6 @@ public class ServerMainApplication extends Application {
                         data.add(temp[0]);
                     }
                 }
-
-
             }
             bufferedReader.close();
 
@@ -130,8 +126,6 @@ public class ServerMainApplication extends Application {
                 }
             }
 
-
-
             String[] times = {"0:00 - 0:59", "1:00 - 1:59", "2:00 - 2:59", "3:00 - 3:59",
                     "4:00 - 4:59", "5:00 - 5:59", "6:00 - 6:59", "7:00 - 7:59",
                     "8:00 - 8:59", "9:00 - 9:59", "10:00 - 10:59", "11:00 - 11:59",
@@ -146,22 +140,16 @@ public class ServerMainApplication extends Application {
 
             barChart.getData().add(series);
 
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-
-
-
         }
 
         Scene scene = new Scene(barChart);
         graph.setTitle("Activity on " + date.format(dateFormat));
         graph.setScene(scene);
         graph.show();
-
-
     }
 
 
