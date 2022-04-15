@@ -87,7 +87,6 @@ public class ServerMainApplication extends Application {
         numberAxis.setLabel("Messages");
 
         try {
-
             File file = new File("Logs.csv");
             if (!file.exists()){
                 file.createNewFile();
@@ -140,8 +139,6 @@ public class ServerMainApplication extends Application {
 
             barChart.getData().add(series);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -151,7 +148,6 @@ public class ServerMainApplication extends Application {
         graph.setScene(scene);
         graph.show();
     }
-
 
     /**
      * Main method that helps launch the JavaFX application (the server side).
