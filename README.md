@@ -25,9 +25,22 @@ After the server is shut down, a graph displaying the chatting activity of all o
 
 [<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Youtube Logo" width="200"/>](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-To begin,
-- Using IntelliJ, right click `ClientMainApplication` and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances".
-- Then, simply run the main methods present in the `ServerMainApplication` and `ClientMainApplication` classes (the order you run them in doesn't matter but the server must be running in order for the client to begin chatting).
--  If you want to add another client to the server, run the main method in the `ClientMainApplication` and keep doing so until satisfied. 
--  Right when the server and all of the `ClientMainApplication` class instances have been shut down, the client activity graph will be produced. 
--  Once the window displaying the graph has been shut down, the application is considered complete.
+**To begin, through Windows, the program may be run in IntelliJ:**
+- Right click `ClientMainApplication` and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances".
+- Then, run the `ServerMainApplication` method. This will initialize the server.
+- Next, run the `ClientMainApplication` method. This will initialize one single client.
+<img src="https://i.imgur.com/xqI77aq.png" alt="Highlighted files" width="100"/>
+- To disconnect a client from the server, close the client of choice's window. This will prompt a message in the server mentioning that the client has been disconnected.
+- To close the server, close the server's window. If the server is closed before the clients are disconnected, the clients will be notified that their connection has been lost.
+- Once the server is closed, a graph displaying the user activity in intervals of one hour each will be displayed.
+- Close the graph to complete the program.
+
+**Alternatively, use an executable Jar file found [here.](https://drive.google.com/drive/folders/1qcNNLoXyQnWAwGEZZL4OOepyXH4zNhBS?usp=sharing)**
+- First, initialize the server by either running the ServerExecute.bat, or run `java -jar ServerExecute.jar` in the command line.
+- Then, initialize a client by either running the ClientExecute.bat, or run `java -jar ClientExecute.jar` in the command line.
+- Both .bat files simply include the previous two commands, respectively.
+<img src="https://i.imgur.com/a2hRTz8.png" alt="Google Drive" width="100"/>
+- To disconnect a client from the server, close the client of choice's window. This will prompt a message in the server mentioning that the client has been disconnected.
+- To close the server, close the server's window. If the server is closed before the clients are disconnected, the clients will be notified that their connection has been lost.
+- Once the server is closed, a graph displaying the user activity in intervals of one hour each will be displayed.
+- Close the graph to complete the program.
