@@ -21,9 +21,9 @@ After the server is shut down, a graph displaying chatting activity over the cou
 
 ## How to Run the Application:
 
-**For a video presentation of how to run the program, see youtube link [here!](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
+**For a video presentation of how to run the program, see youtube link [here!](https://youtu.be/pPbI0dHHsCo)**
 
-[<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Youtube Logo" width="200"/>](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Youtube Logo" width="200"/>](https://youtu.be/pPbI0dHHsCo)
 
 **To begin, through Windows, the program may be run in IntelliJ:**
 - Right click `ClientMainApplication` and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances".
