@@ -17,7 +17,7 @@ This project demonstrates a chatting application with one or more clients chatti
 After the server is shut down, a graph displaying chatting activity over the course of the running time of the server is presented. 
 - A CSV file is used as a means of storing the values that will then be displayed on the graph. 
 
-*INSERT GRAPH SCREENSHOT HERE*
+<img src="https://i.imgur.com/KSipvbZ.png" alt="Graph"/>
 
 ## How to Run the Application:
 
@@ -28,7 +28,7 @@ After the server is shut down, a graph displaying chatting activity over the cou
 **To begin, through Windows, the program may be run in IntelliJ:**
 - Right click `ClientMainApplication` and navigate to /Modify Run Configuration.../Modify Options/, and select "Allow Multiple Instances".
 
-<img src="https://i.imgur.com/GH7DwIw.png" alt="Highlighted files"/>
+<img src="https://i.imgur.com/GH7DwIw.png" alt="Multiple Instances"/>
 
 - Then, run the `ServerMainApplication` method. This will initialize the server.
 - Next, run the `ClientMainApplication` method. This will initialize one single client.
