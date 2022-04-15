@@ -17,7 +17,9 @@ import java.time.format.DateTimeFormatter;
 
 import java.time.LocalDate;
 
-
+/**
+ * Prepares graph that is presented once the server has shutdown.
+ */
 public class ActivityGraph {
 
     private GridPane root;
