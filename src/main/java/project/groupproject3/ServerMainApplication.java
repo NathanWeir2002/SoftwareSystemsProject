@@ -70,6 +70,12 @@ public class ServerMainApplication extends Application {
     }
 
 
+    /**
+     * Void method that creates a graph based on Logs.csv after server stage is closed.
+     *
+     * @exception IOException Handles any error with input during graphing.
+     * @exception FileNotFoundException Handles an error when file is not found during graphing.
+     */
     public void shutdown(){
         Stage graph = new Stage();
         LocalDate date = LocalDate.now();

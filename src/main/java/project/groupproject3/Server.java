@@ -49,7 +49,7 @@ public class Server implements Runnable {
         if (fileLength>0){
             //writes to file by appending text to the end of the file
             fileWriter = new FileWriter(file, true);
-            log(fileWriter, message, fileLength);
+            log(fileWriter, message);
         } else {
             //writes the header first before writing actual message
             //could use improvement
@@ -60,7 +60,7 @@ public class Server implements Runnable {
             fW.write(header);
             fW.flush();
 
-            log(fileWriter, message, fileLength);
+            log(fileWriter, message);
             fW.close();
 
         }
@@ -93,8 +93,13 @@ public class Server implements Runnable {
         }
     }
 
-    //logs messages in csv format
-    public void log(FileWriter fWriter, String message, long length) throws IOException {
+    /**
+     * This method is used to write messages and additional details into Logs.csv as a logging tool.
+     * @param fWriter This is used to write to the file 'Logs.csv'.
+     * @param message This is the message being sent. Includes username, time, and message.
+     * @throws IOException This handles any error in writing to the file.
+     */
+    public void log(FileWriter fWriter, String message) throws IOException {
 
         try{
 
